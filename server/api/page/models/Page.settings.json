@@ -1,0 +1,86 @@
+{
+  "connection": "default",
+  "collectionName": "pages",
+  "info": {
+    "name": "page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 32,
+      "required": true
+    },
+    "links": {
+      "collection": "links",
+      "via": "page"
+    },
+    "owner": {
+      "model": "user",
+      "via": "pages",
+      "plugin": "users-permissions"
+    },
+    "slug": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 32,
+      "required": true
+    },
+    "contact": {
+      "default": false,
+      "type": "boolean"
+    },
+    "email": {
+      "default": "",
+      "type": "email"
+    },
+    "fb": {
+      "default": "",
+      "type": "string"
+    },
+    "ga": {
+      "default": "",
+      "type": "string"
+    },
+    "theme": {
+      "default": "default",
+      "type": "string"
+    },
+    "animation": {
+      "default": "shake",
+      "type": "string"
+    },
+    "timezone": {
+      "default": "America/New_York",
+      "type": "string"
+    },
+    "style": {
+      "default": "",
+      "type": "json"
+    },
+    "channels": {
+      "default": "",
+      "type": "json"
+    },
+    "desc": {
+      "default": "",
+      "maxLength": 140,
+      "type": "string"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

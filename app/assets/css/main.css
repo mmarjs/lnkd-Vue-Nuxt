@@ -1,0 +1,67 @@
+#__nuxt, #__layout {
+  height: 100%!important;
+}
+.card-header-title {
+  background: #ddd;
+}
+.navbar-item.nuxt-link-exact-active, .navbar-item.nuxt-link-active {
+  background-color: #fff!important;
+  color: #7957d5!important;
+}
+* { 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.navbar-burger:hover {
+  background-color: unset;
+}
+.navbar-menu {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+h2 {
+  font-size:30px;
+  font-weight: 700;
+  margin-bottom:0.5rem;
+}
+.article p {
+  margin-bottom: 1em;
+}
+.link-options {
+  padding-top: 0!important;
+}
+.link-options img {
+  height: 1em;
+}
+nav {
+  margin: 0 auto;
+}
+.navbar-start {
+  margin: 0 auto;
+}
+.navbar-end {
+  margin-left: 0;
+}
+.navbar-start, .navbar-end {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.navbar-item {
+  padding: 0.8rem 0.75rem!important;
+}
+@media only screen and (max-width: 1087px) {
+  .navbar-item {
+    margin-left: 0.5em;
+    font-size: 1.5em;
+  }
+  .link-options img {
+    height: 1.75em;
+  }
+  .navbar-burger {
+    margin-left: 0;
+  }
+  .navbar.is-fixed-top .navbar-menu {
+    border-top: 2px solid #c0c0c0;
+    height: 100vh;
+  }
+}

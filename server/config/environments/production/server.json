@@ -1,0 +1,16 @@
+{
+  "host": "0.0.0.0",
+  "port": 8080,
+  "proxy": {
+    "enabled": true,
+    "ssl": true,
+    "host": "api.lnkd.co",
+    "port": 443
+  },
+  "cron": {
+    "enabled": false
+  },
+  "admin": {
+    "autoOpen": false
+  }
+}

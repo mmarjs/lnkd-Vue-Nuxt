@@ -1,0 +1,51 @@
+{
+  "connection": "default",
+  "collectionName": "links",
+  "info": {
+    "name": "links",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "url": {
+      "default": "",
+      "type": "string"
+    },
+    "page": {
+      "model": "page",
+      "via": "links"
+    },
+    "star": {
+      "default": false,
+      "type": "boolean"
+    },
+    "status": {
+      "default": false,
+      "type": "boolean"
+    },
+    "order": {
+      "default": "",
+      "type": "integer"
+    },
+    "clicks": {
+      "default": "",
+      "type": "integer"
+    },
+    "start": {
+      "default": "",
+      "type": "date"
+    },
+    "end": {
+      "default": "",
+      "type": "date"
+    }
+  }
+}

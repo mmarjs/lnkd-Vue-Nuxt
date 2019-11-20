@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+  nuxt:
+    build: 
+      context: ./app/
+      args:
+        api_url: ${API_URL}
+        stripe_pk: ${STRIPE_PK}
+    container_name: lnkd.co
+    restart: always
+    ports:
+      - "3000:3000"
+    entrypoint: "/bin/sh"
+    command: "-c \"npm run start\""
+    env_file:
+      - .env
+    links:
+      - server
+
+  server:
+    build: ./server/
+    container_name: api.lnkd.co
+    restart: always
+    ports:
+      - "1337:1337"
+    entrypoint: "/bin/sh"
+    command: "-c \"NODE_ENV=${NODE_ENV} DOMAIN=${DOMAIN} STRIPE_SK=${STRIPE_SK} STRIPE_WH=${STRIPE_WH} npm run build && NODE_ENV=${NODE_ENV} DOMAIN=${DOMAIN} STRIPE_SK=${STRIPE_SK} STRIPE_WH=${STRIPE_WH} npm run start\""
+    env_file:
+      - .env
+
+  nginx:
+    image: nginx
+    container_name: lnkd-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt
+    depends_on:
+      - nuxt
+      - server
