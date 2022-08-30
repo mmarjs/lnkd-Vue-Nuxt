@@ -27,7 +27,7 @@
     "debounce": "^1.2.0",
     "js-cookie": "^2.2.0",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.35",
     "nuxt": "^2.10.0",
     "nuxt-buefy": "^0.3.10",
     "nuxt-purgecss": "^0.2.1",
